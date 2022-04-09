@@ -1,12 +1,13 @@
 {
   "name": "nestjs-context-tracer",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "trace http request ",
   "engines": {
     "node": ">=14.0.0"
   },
   "main": "dist/index.js",
   "scripts": {
+    "prepare" : "npm run build",
     "prebuild": "rimraf dist",
     "build": "tsc -p tsconfig.build.json"
   },
