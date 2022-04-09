@@ -12,10 +12,10 @@ This enable to trace http request by unique id. Each request has unique Id and Y
 ### example 
 - app.module.ts
 ```ts
-import { AsyncTraceIdMiddleware, AsyncHooksModule } from 'nestjs-context-tracer';
+import { AsyncTraceIdMiddleware, AsyncTraceModule } from 'nestjs-context-tracer';
 
 @Module({
-  imports: [ AsyncHooksModule ],
+  imports: [ AsyncTraceModule ],
   controllers: [AppController],
   providers: [AppService],
 })

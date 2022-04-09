@@ -1,10 +1,10 @@
 import { Module, NestModule, MiddlewareConsumer, RequestMethod } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { AsyncTraceIdMiddleware, AsyncHooksModule } from 'nestjs-context-tracer';
+import { AsyncTraceIdMiddleware, AsyncTraceModule } from 'nestjs-context-tracer';
 
 @Module({
-  imports: [ AsyncHooksModule ],
+  imports: [ AsyncTraceModule ],
   controllers: [AppController],
   providers: [AppService],
 })

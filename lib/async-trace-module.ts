@@ -11,4 +11,4 @@ import { AsyncContext } from './async-context';
   ],
   exports: [AsyncContext],
 })
-export class AsyncHooksModule {}
+export class AsyncTraceModule {}
