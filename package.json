@@ -1,0 +1,28 @@
+{
+  "name": "nestjs-context-tracer",
+  "version": "0.1.0",
+  "description": "trace http request ",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "tsc -p tsconfig.build.json"
+  },
+  "keywords": [
+    "nestjs",
+    "http",
+    "trace-id"
+  ],
+  "author": "jays.woo",
+  "license": "MIT",
+  "dependencies": {
+    "@nestjs/common": "^8.4.4",
+    "reflect-metadata": "^0.1.13"
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.2",
+    "typescript": "^4.6.3"
+  }
+}
