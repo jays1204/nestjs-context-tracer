@@ -31,7 +31,7 @@ export class AppModule implements NestModule {
 ## Get Trace Id
 `Use getTraceId method of AsyncContext `
 
-### `asyncContext.getTraceId(): string`
+### `asyncContext.getTraceId(): string | null`
 
 example
 - app.controller.ts
