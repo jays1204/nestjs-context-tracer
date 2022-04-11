@@ -16,6 +16,11 @@
     "http",
     "trace-id"
   ],
+  "homepage": "https://github.com/jays1204/nestjs-context-tracer#Readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jays1204/nestjs-context-tracer.git"
+  },
   "author": "jays.woo",
   "license": "MIT",
   "dependencies": {
