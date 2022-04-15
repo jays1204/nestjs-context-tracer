@@ -44,7 +44,7 @@ export class AsyncContext implements OnModuleDestroy {
 
   getTraceId(): string | null {
     // @ts-ignore 
-    return this.get(this.TRACE_ID_NAME) | null;
+    return this.get(this.TRACE_ID_NAME) || null;
   }
 
   run(fn: Function) {
