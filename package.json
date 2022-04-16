@@ -1,6 +1,6 @@
 {
   "name": "nestjs-context-tracer",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "trace http request ",
   "engines": {
     "node": ">=14.0.0"

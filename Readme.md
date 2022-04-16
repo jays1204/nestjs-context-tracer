@@ -1,4 +1,4 @@
-# nestjs-context-tracer
+# nestjs-contexttracer
 Trace each http context of your nest.js application.
 This enable to trace http request by unique id. Each request has unique Id and You can get id on controller, service, dao, anywhere.
 
@@ -15,7 +15,7 @@ This enable to trace http request by unique id. Each request has unique Id and Y
 import { AsyncTraceIdMiddleware, AsyncTraceModule } from 'nestjs-context-tracer';
 
 @Module({
-  imports: [ AsyncTraceModule ],
+  imports: [ AsyncTraceModule.forRoot() ],
   controllers: [AppController],
   ...
 })

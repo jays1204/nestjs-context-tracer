@@ -21,7 +21,7 @@ export class AsyncContext implements OnModuleDestroy {
   ) {
   }
 
-  static getInstance(options: LRUCache.Options<string, any> = null): AsyncContext {
+  static getInstance(options: LRUCache.Options<string, any>): AsyncContext {
     if (!this._instance) {
       this.initialize(options ? options : DEFAULT_LRU_OPTIONS);
     }
