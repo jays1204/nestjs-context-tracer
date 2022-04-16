@@ -2,22 +2,28 @@ import { OnModuleDestroy, OnModuleInit } from '@nestjs/common';
 import { randomUUID } from 'crypto';
 import { AsyncLocalStorage } from 'async_hooks';
 import { AsyncTraceError } from './async-trace-error';
+import LRUCache, * as LRU from 'lru-cache';
 
 
+const DEFAULT_LRU_OPTIONS: LRUCache.Options<string, any> = {
+  ttl: 1000 * 60 * 5,
+  max: 500,
+  updateAgeOnGet: false,
+};
 
 export class AsyncContext implements OnModuleDestroy {
   private static _instance: AsyncContext;
   private readonly TRACE_ID_NAME: string = "traceId";
 
   private constructor(
-    private readonly internalStorage: Map<string, any>,
+    private readonly internalStorage: LRUCache<string, any>,
     private readonly asyncLocalStorage
   ) {
   }
 
-  static getInstance(): AsyncContext {
+  static getInstance(options: LRUCache.Options<string, any> = null): AsyncContext {
     if (!this._instance) {
-      this.initialize();
+      this.initialize(options ? options : DEFAULT_LRU_OPTIONS);
     }
     return this._instance;
   }
@@ -56,8 +62,8 @@ export class AsyncContext implements OnModuleDestroy {
     });
   }
 
-  private static initialize() {
-    const storage = new Map<string, unknown>();
+  private static initialize(options: LRUCache.Options<string, any>) {
+    const storage: LRUCache<string, any> = new LRU(options);
     this._instance = new AsyncContext(storage, new AsyncLocalStorage());
   }
 }
