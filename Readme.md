@@ -70,6 +70,8 @@ example
 ```ts
 asyncContext.set('role', 'ADMIN');
 ```
+Do not  use 'traceId' value as key name.
+Because 'traceId' value is used for this library TraceID value.
 
 ### `asyncContext.get(key): unknown`
 
