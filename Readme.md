@@ -1,4 +1,4 @@
-# nestjs-contexttracer
+# nestjs-context-tracer
 Trace each http context of your nest.js application.
 This enable to trace http request by unique id. Each request has unique Id and You can get id on controller, service, dao, anywhere.
 
@@ -92,6 +92,9 @@ If you want to see more information see this [issue](https://github.com/nodejs/n
 
 ### Context loss
 If your code is based on callback, not promsie, you must read this [document](https://nodejs.org/dist/latest-v16.x/docs/api/async_context.html#troubleshooting-context-loss). 
+
+### Do not use 0.2.0 or below
+That version has critical bug. some http request share storeage.
 
 ---
 This library inspired by https://github.com/nestjs/nest/pull/1407
